@@ -52,12 +52,12 @@ if (is_numeric($nid)){
 		$breadcrumb[0] = l('Forside', '<front>');
 		$breadcrumb[] = '<a href="#">Søgning</a>';
 	}
-    if ($node->type == 'meeting') {
+  if (isset($node) && is_object($node) && $node->type == 'meeting') {
 		unset($breadcrumb);
 		$breadcrumb[0] = l('Forside', '<front>');
 		$breadcrumb[] = l('Politik & planer', 'politik-og-planer');		
-		$breadcrumb[] = l('Søg i dagsordener og referater', 'meetings-search');		
-		$breadcrumb[] = l($title, '#');
+		$breadcrumb[] = l('Søg i dagsordener og referater', 'dagsorden-og-referat');		
+		$breadcrumb[] = '<a href="#">'.$title.'</a>';
         }
     $output .= '<div class="breadcrumb">' . implode('<div class="bread-crumb"> > </div> ', $breadcrumb) . '</div>';
 return $output;
@@ -100,7 +100,7 @@ function cmstheme_form_alter(&$form, &$form_state, $form_id) {
   }
   if(isset($form_state['view']->name) && $form_state['view']->name == 'meetings_search') {
     
-    //tth@bellcom.dk ændret tekst på select i meetings-search
+    //tth@bellcom.dk ændret tekst på select i dagsorden-og-referat / meetings-search
     $form['committee']['#options']['All'] = t('Vælg udvalg');
     $form['from_date']['value']['#date_format'] = 'd-m-Y';
     $form['to_date']['value']['#date_format'] = 'd-m-Y';
