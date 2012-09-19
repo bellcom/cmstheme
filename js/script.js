@@ -4,12 +4,10 @@ jQuery(document).ready(function () {
 		jQuery(v).parent().parent().parent().css('background-image','url('+jQuery(v).attr("title")+')');
 	});
 
-	jQuery('.billedrotator').mouseover(function() {
-		jQuery('.custom-slideshow .active').addClass('hover');
-		jQuery('#views_slideshow_cycle_main_rotating_image_view-block').addClass('hover');
-		jQuery('#views_slideshow_cycle_main_rotating_image_view-block_1').addClass('hover');
+	jQuery('.custom-slideshow').mouseover(function() {
+	  jQuery(this).addClass('hovering');
 	}).mouseout(function() {
-		jQuery('.custom-slideshow .hover').removeClass('hover', 500);
+	  jQuery(this).removeClass('hovering');
 	});
 
 	jQuery('.pane-newslist ul li').not(':last-child').each(function(k,v) {

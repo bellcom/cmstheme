@@ -215,7 +215,7 @@ div.vertical-tabs .vertical-tabs-panes .fieldset-wrapper legend {
 	width: 475px;
 }
 
-#views_slideshow_cycle_main_rotating_image_view-block.hover {
+.custom-slideshow.hovering #views_slideshow_cycle_main_rotating_image_view-block {
 	border: solid #961862 5px;
 }
 
@@ -224,7 +224,7 @@ div.vertical-tabs .vertical-tabs-panes .fieldset-wrapper legend {
   width: 460px
 }
 
-#views_slideshow_cycle_main_rotating_image_view-block_1.hover {
+.custom-slideshow.hovering #views_slideshow_cycle_main_rotating_image_view-block_1 {
 	border: solid #961862 5px;
 	padding: 0;
 }
@@ -266,11 +266,18 @@ div.vertical-tabs .vertical-tabs-panes .fieldset-wrapper legend {
 	padding: 0 5px 0 25px;
 	padding-right: 10px;
         color: #787878;
+
+	/*IE7 HACK*/
+	*padding-top: 25px;
+	*background-position: 2% 100%;
 }
 
 .custom-slideshow .views-slideshow-pager-field-item.active .views-field-title .item-bg {
 	background: url(../images/slide-nav-arrow.png) no-repeat 2% 48% transparent;
         color: #fff;
+	
+	/*IE7 HACK*/
+	*background-position: 2% 100%;
 }
 
 .views-slideshow-pager-field-item.active .views-field-title .views-content-title {
@@ -285,7 +292,7 @@ div.vertical-tabs .vertical-tabs-panes .fieldset-wrapper legend {
 	behavior: url(ie-css3.htc); /* IE FIX -tc */
 }
 
-.views-slideshow-pager-field-item.hover .views-field-title .views-content-title {
+.custom-slideshow.hovering .views-slideshow-pager-field-item.active .views-field-title .views-content-title {
 	background: url(../images/p80.png) top left;
 	position: relative;
 	z-index: 999;
@@ -606,42 +613,20 @@ ul.jcarousel-list-horizontal { }
 .region-footer-first-inner, .region-footer-second-inner, .region-footer-third-inner {margin: 29px 0 10px 0 }
 .region-footer-first-inner {padding-left: 145px; line-height: 30px; margin: 0;}
 #region-footer-first {background-image: url(../images/lille-logo.png); width: 970px; margin: 0; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;  }
+/*
 <<<<<<< HEAD
 =======
-
+*/
 .qtip-cmstheme {  margin-top: 42px; background-color: transparent}
+/*
 >>>>>>> fc30032c3ba94ef2b9d5fec4dc76514bb21b7940
-
+*/
 .node-type-files .field-name-field-resume-long { font-size: 22px}
 
 .omega-24-twocol-12-12 {width: 940px}
 .omega-24-twocol-12-12 .grid-12 {width: 460px; background-color: transparent}
 
-#block-search-form .content #edit-search-block-form--2 {
-	width: 333px; 
-	font-size: 20px; 
-	border: none; 
-	height: 59px; 
-	/*line-height: 40px; */
-	padding: 0 ; 
-	text-transform: uppercase; 
-	background: transparent; 
-	/*margin: 14px 0px; */
-	width: 370px; 
-	/*position: relative; */
-	color: #9a9a9a; }
 
-
-#zone-menu .form-item-search-block-form input[type="text"] {
-	width: 399px !important;
-	padding-left: 20px !important;
-	text-transform: uppercase !important;
-	}
-	
-	
-#block-search-form #edit-submit {
-    background-image: url(../images/search-button.png); width: 70px; height: 68px; border: none; margin: 0; padding: 0; border-radius: 0px;  -moz-border-radius: 0px;
-    }
 #region-header-second .region-inner {padding-top: 65px; padding-left: 20px}
 #region-header-second .region-inner li { float: left; padding-right: 10px; text-transform: uppercase; font-family: "myriad-pro", Arial, Helvetica, sans-serif; font-size: 12px; list-style: none; }
 #region-header-second .region-inner li.first { margin-left: 0px }
@@ -847,7 +832,14 @@ div.panel-pane.pane-views-panes.pane-megadd-news-panel-pane-1.grid-3.alpha.omega
     padding-bottom: 0;
     text-transform: uppercase;}
 
-.telfonnummer {background-image: url(../images/telefon.png); background-repeat: no-repeat; padding-left: 35px; margin-bottom: 10px}
+/*.telfonnummer {background-image: url(../images/telefon.png); background-repeat: no-repeat; padding-left: 35px; margin-bottom: 10px}*/
+.telefonnummer {
+  padding: 0 0 18px 43px;
+  background-image: url(/profiles/os2web/themes/cmstheme/images/telefon.png);
+  background-repeat: no-repeat;
+  background-position: 15px 5px;
+  margin-top: 15px;
+}
 .telfonnummer, .telfonnummer a { font-size: 34px;color: #777; line-height: 37px}
 
 .views-field-field-kontaktblok-callcenter p {margin-bottom: 10px}
@@ -1710,7 +1702,40 @@ BODY:first-of-type ul.as-list, x:-moz-any-link, x:default { /* Target FF 3.5+ */
 #zone-menu {   height: 64px;}
 .qtip-cmstheme .qtip-wrapper { background-image: url("../images/megadropdownBAG.png");}
 
+	
+#block-search-form #edit-submit {
+    background-image: url(../images/search-button.png); width: 70px; height: 68px; border: none; margin: 0; padding: 0; border-radius: 0px;  -moz-border-radius: 0px;
+    }
+
 #block-search-form #edit-submit { height: 65px; width: 73px;}
+
+#block-search-form .form-text {
+	width: 399px !important;
+	padding-left: 20px !important;
+	text-transform: uppercase !important;
+	font-size: 20px; 
+	border: none; 
+	height: 59px; 
+	/*line-height: 40px; */
+	padding: 0 ; 
+	text-transform: uppercase; 
+	background: transparent;
+	color: #9a9a9a; 
+	/*Franz Skaaning */}
+
+
+
+	
+#block-search-form #edit-submit {
+    background-image: url(../images/search-button.png); 
+    width: 70px; 
+    height: 68px; 
+    border: none; 
+    margin: 0; 
+    padding: 0; 
+    border-radius: 0px; 
+    -moz-border-radius: 0px;
+    }
 
 .panels-flexible-region .pane-kulturnaut-events-lister {
     margin-left: 6px;
@@ -2807,7 +2832,8 @@ line-height: 22px;
 .yaselect-current, 
 .yaselect-select { 
 	font-size: 15px; 
-	color: #787878; }
+/*	color: #787878; }*/
+	color: #333333; }
 /*	
 .form-item-committee .yaselect-wrap { 
 	width: 440px; }
@@ -3156,3 +3182,43 @@ border-bottom: 1px solid #F3F3F3;
 
 .selvbetjening-block-forside .view-content .form-item-jump{ background: transparent; z-index: 999}
 .selvbetjening-block-forside .view-footer .view-content .form-item-jump{ background: transparent; z-index: 1001}
+
+.page-search404 #region-content { width: 710px; }
+
+.page-search404 #region-content .block-system .search-form .form-text {width: 440px;}
+.page-search404 #region-content .search-results { background-color: #FFF}
+
+#views-exposed-form-meetings-search-page-1 {}
+#views-exposed-form-meetings-search-page-1 input {
+
+}
+#views-exposed-form-meetings-search-page-1 input[type=text] {
+width: 437px !important;
+padding-left: 20px !important;
+text-transform: uppercase !important;
+font-size: 20px;
+border: none;
+height: 59px;
+padding: 0;
+text-transform: uppercase;
+background: transparent;
+color: #9a9a9a;
+border: 1px solid #9a9a9a}
+
+#views-exposed-form-meetings-search-page-1 input[type=submit] {
+/*background-image: url(../images/search-button.png);*/
+background-image: url(../images/soegefeltLUP.png);
+width: 70px;
+height: 68px;
+border: none;
+margin-top: 0px;
+padding: 0;
+border-radius: 0px;
+-moz-border-radius: 0px;text-indent: 99999px;}
+
+#edit-field-meeting-search-meta-date-value-wrapper {
+    float: left;
+    padding: 0;
+}
+
+
